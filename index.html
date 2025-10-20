@@ -1,355 +1,320 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6d6d6d; -webkit-text-stroke: #6d6d6d}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6b0001; -webkit-text-stroke: #6b0001}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #fb0007; -webkit-text-stroke: #fb0007}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #0000ff; -webkit-text-stroke: #0000ff}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #137646; -webkit-text-stroke: #137646}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000; min-height: 16.0px}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #18702b; -webkit-text-stroke: #18702b}
-    span.s1 {font-kerning: none; background-color: #ecf1f7}
-    span.s2 {font-kerning: none; color: #fb0007; background-color: #ecf1f7; -webkit-text-stroke: 0px #fb0007}
-    span.s3 {font-kerning: none; color: #2a2a2a; background-color: #ecf1f7; -webkit-text-stroke: 0px #2a2a2a}
-    span.s4 {font-kerning: none; color: #000000; background-color: #ecf1f7; -webkit-text-stroke: 0px #000000}
-    span.s5 {font-kerning: none; color: #0000ff; background-color: #ecf1f7; -webkit-text-stroke: 0px #0000ff}
-    span.s6 {font-kerning: none; color: #6b0001; background-color: #ecf1f7; -webkit-text-stroke: 0px #6b0001}
-    span.s7 {font-kerning: none; color: #18702b; background-color: #ecf1f7; -webkit-text-stroke: 0px #18702b}
-    span.s8 {font-kerning: none; color: #093c94; background-color: #ecf1f7; -webkit-text-stroke: 0px #093c94}
-    span.s9 {font-kerning: none; color: #137646; background-color: #ecf1f7; -webkit-text-stroke: 0px #137646}
-    span.s10 {font-kerning: none}
-    span.s11 {font-kerning: none; color: #6f0ec3; background-color: #ecf1f7; -webkit-text-stroke: 0px #6f0ec3}
-    span.s12 {font-kerning: none; color: #a4450b; background-color: #ecf1f7; -webkit-text-stroke: 0px #a4450b}
-    span.s13 {font-kerning: none; color: #0e6e6d; background-color: #ecf1f7; -webkit-text-stroke: 0px #0e6e6d}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Fereydoon Taheri - A Visual CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .brand-text { color: #0077B6; }
+        .brand-bg { background-color: #0077B6; }
+        .brand-bg-light { background-color: #CAF0F8; }
+        .brand-border { border-color: #0077B6; }
+        .stat-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            border-top: 4px solid #00B4D8;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #0077B6;
+            border: 4px solid #CAF0F8;
+        }
+    </style>
 </head>
-<body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">html</span><span class="s4"> </span><span class="s2">lang</span><span class="s3">=</span><span class="s5">"en"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s5">"UTF-8"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s4"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">title</span><span class="s3">&gt;</span><span class="s1">Dr. Fereydoon Taheri - A Visual CV</span><span class="s3">&lt;/</span><span class="s6">title</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.tailwindcss.com"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.jsdelivr.net/npm/chart.js"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"preconnect"</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.googleapis.com"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"preconnect"</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.gstatic.com"</span><span class="s4"> </span><span class="s2">crossorigin</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"stylesheet"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">body</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-family:</span><span class="s1"> </span><span class="s7">'Inter'</span><span class="s1">, </span><span class="s8">sans-serif</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#f8fafc</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.chart-container</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">position:</span><span class="s1"> </span><span class="s8">relative</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s9">100%</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">max-width:</span><span class="s1"> </span><span class="s9">500px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">margin-left:</span><span class="s1"> </span><span class="s8">auto</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">margin-right:</span><span class="s1"> </span><span class="s8">auto</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">height:</span><span class="s1"> </span><span class="s9">350px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">max-height:</span><span class="s1"> </span><span class="s9">400px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>@</span><span class="s6">media</span><span class="s1"> (</span><span class="s6">min-width:</span><span class="s1"> 768</span><span class="s6">px</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>.chart-container {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s2">height:</span><span class="s1"> </span><span class="s9">400px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.brand-text</span><span class="s1"> { </span><span class="s2">color:</span><span class="s1"> </span><span class="s8">#0077B6</span><span class="s1">; }</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s6">.brand-bg</span><span class="s4"> { </span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#0077B6</span><span class="s4">; }</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s6">.brand-bg-light</span><span class="s4"> { </span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#CAF0F8</span><span class="s4">; }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.brand-border</span><span class="s1"> { </span><span class="s2">border-color:</span><span class="s1"> </span><span class="s8">#0077B6</span><span class="s1">; }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.stat-card</span><span class="s1"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">white</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-radius:</span><span class="s1"> </span><span class="s9">0.75rem</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">padding:</span><span class="s1"> </span><span class="s9">1.5rem</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">text-align:</span><span class="s1"> </span><span class="s8">center</span><span class="s1">;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">box-shadow:</span><span class="s4"> </span><span class="s1">0</span><span class="s4"> </span><span class="s1">10px</span><span class="s4"> </span><span class="s1">15px</span><span class="s4"> </span><span class="s1">-3px</span><span class="s4"> </span><span class="s8">rgb(</span><span class="s1">0</span><span class="s4"> </span><span class="s1">0</span><span class="s4"> </span><span class="s1">0</span><span class="s4"> / </span><span class="s1">0.1</span><span class="s8">)</span><span class="s4">, </span><span class="s1">0</span><span class="s4"> </span><span class="s1">4px</span><span class="s4"> </span><span class="s1">6px</span><span class="s4"> </span><span class="s1">-4px</span><span class="s4"> </span><span class="s8">rgb(</span><span class="s1">0</span><span class="s4"> </span><span class="s1">0</span><span class="s4"> </span><span class="s1">0</span><span class="s4"> / </span><span class="s1">0.1</span><span class="s8">)</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-top:</span><span class="s1"> </span><span class="s9">4px</span><span class="s1"> </span><span class="s8">solid</span><span class="s1"> </span><span class="s8">#00B4D8</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.timeline-item::before</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">content:</span><span class="s1"> </span><span class="s7">''</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">position:</span><span class="s1"> </span><span class="s8">absolute</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">left:</span><span class="s1"> </span><span class="s9">-33px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">top:</span><span class="s1"> </span><span class="s9">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s9">24px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">height:</span><span class="s1"> </span><span class="s9">24px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-radius:</span><span class="s1"> </span><span class="s9">50%</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#0077B6</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border:</span><span class="s1"> </span><span class="s9">4px</span><span class="s1"> </span><span class="s8">solid</span><span class="s1"> </span><span class="s8">#CAF0F8</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s3">&lt;</span><span class="s6">body</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-gray-800"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">header</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-center py-12 px-4 bg-white"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">h1</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-4xl md:text-6xl font-black brand-text tracking-tight"</span><span class="s3">&gt;</span><span class="s4">Dr. Fereydoon Taheri</span><span class="s3">&lt;/</span><span class="s6">h1</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-xl md:text-2xl font-light text-gray-600 mt-2"</span><span class="s3">&gt;</span><span class="s1">Computational Scientist | Imaging &amp; Algorithm Development</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"max-w-3xl mx-auto mt-6 text-gray-500"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>An infographic resume showcasing a decade of experience in transforming complex data into scientific breakthroughs through advanced algorithms, mathematical modeling, and cross-functional R&amp;D leadership.</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">header</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">main</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"container mx-auto px-4 sm:px-6 lg:px-8 py-12"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"overview"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"mb-20"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-1 md:grid-cols-3 gap-8"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"stat-card"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-5xl font-extrabold brand-text"</span><span class="s3">&gt;</span><span class="s4">10+</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-gray-500 mt-2"</span><span class="s3">&gt;</span><span class="s1">Years of Experience</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"stat-card"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-5xl font-extrabold brand-text"</span><span class="s3">&gt;</span><span class="s4">PhD</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-gray-500 mt-2"</span><span class="s3">&gt;</span><span class="s1">in Physics</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"stat-card"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-5xl font-extrabold brand-text"</span><span class="s3">&gt;</span><span class="s4">6</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-gray-500 mt-2"</span><span class="s3">&gt;</span><span class="s1">Key Publications</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"competencies"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white rounded-lg shadow-lg p-6 md:p-8 mb-20"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-3xl font-bold text-center mb-2 brand-text"</span><span class="s3">&gt;</span><span class="s4">Core Competencies</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-center text-gray-600 max-w-2xl mx-auto mb-8"</span><span class="s3">&gt;</span><span class="s1">A multi-faceted skill set balanced across theoretical modeling, software engineering, and strategic project leadership.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"chart-container"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">canvas</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"competenciesRadarChart"</span><span class="s3">&gt;&lt;/</span><span class="s6">canvas</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-center text-sm text-gray-500 mt-4"</span><span class="s3">&gt;</span><span class="s1">This radar chart visualizes proficiency across key domains, demonstrating a well-rounded expertise crucial for bridging the gap between research and product development. Strengths in Algorithm Development and Modeling are complemented by strong project leadership and data analysis skills.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"experience"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"mb-20"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-3xl font-bold text-center mb-10 brand-text"</span><span class="s3">&gt;</span><span class="s4">Career Journey</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"relative max-w-4xl mx-auto"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"absolute left-4 top-0 h-full w-0.5 brand-bg-light"</span><span class="s3">&gt;&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"relative pl-12 space-y-12"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white rounded-lg shadow-md p-6 border-l-4 border-[#00B4D8] timeline-item"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"font-semibold text-gray-500"</span><span class="s3">&gt;</span><span class="s1">Feb 2021 - Sep 2025</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-xl font-bold brand-text mt-1"</span><span class="s3">&gt;</span><span class="s1">Postdoctoral Researcher &amp; Project Coordinator</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"font-medium text-gray-600"</span><span class="s3">&gt;</span><span class="s1">IMSEAM, Heidelberg University</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"mt-3 text-gray-700"</span><span class="s3">&gt;</span><span class="s1">Led development of novel computational imaging algorithms for 3D biological structures and co-designed analysis methodologies with hardware experts, bridging the gap between experimental data and quantitative models.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                     </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white rounded-lg shadow-md p-6 border-l-4 border-[#00B4D8] timeline-item"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"font-semibold text-gray-500"</span><span class="s3">&gt;</span><span class="s1">Jul 2020 - Jan 2021</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-xl font-bold brand-text mt-1"</span><span class="s3">&gt;</span><span class="s1">Postdoctoral Researcher</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"font-medium text-gray-600"</span><span class="s3">&gt;</span><span class="s1">ZMBH, Heidelberg University</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"mt-3 text-gray-700"</span><span class="s3">&gt;</span><span class="s1">Engineered a modular data platform for COVID-19 diagnostics, spearheading the algorithmic pipeline from data ingestion to final visualization using Python and SQL.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white rounded-lg shadow-md p-6 border-l-4 border-[#00B4D8] timeline-item"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"font-semibold text-gray-500"</span><span class="s3">&gt;</span><span class="s1">Feb 2015 - Nov 2019</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-xl font-bold brand-text mt-1"</span><span class="s3">&gt;</span><span class="s1">Doctoral Researcher</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"font-medium text-gray-600"</span><span class="s3">&gt;</span><span class="s1">German Cancer Research Center (dkfz)</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"mt-3 text-gray-700"</span><span class="s3">&gt;</span><span class="s1">Managed a multi-year R&amp;D project solving inverse problems in chromatin mobility from terabytes of advanced light microscopy data (SPIM-FCS), developing robust processing pipelines in Python.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"projects"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white rounded-lg shadow-lg p-6 md:p-8 mb-20"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">             </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-3xl font-bold text-center mb-2 brand-text"</span><span class="s3">&gt;</span><span class="s1">Project Deep Dive: Algorithm in Action</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">             </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-center text-gray-600 max-w-2xl mx-auto mb-10"</span><span class="s3">&gt;</span><span class="s1">From raw data to published insight, this flowchart illustrates the end-to-end process of a key computational imaging project.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">             </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex flex-col items-center space-y-4"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                 </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full max-w-md bg-sky-100 text-sky-800 rounded-lg p-4 text-center shadow"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span></span><span class="s3">&lt;</span><span class="s6">h4</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"font-bold"</span><span class="s3">&gt;</span><span class="s1">1. Data Input</span><span class="s3">&lt;/</span><span class="s6">h4</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">Confocal Microscopy Data</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                 </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                 </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-3xl font-bold text-sky-500 transform rotate-90"</span><span class="s3">&gt;</span><span class="s4">➔</span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                 </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full max-w-md bg-blue-100 text-blue-800 rounded-lg p-4 text-center shadow"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span></span><span class="s3">&lt;</span><span class="s6">h4</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"font-bold"</span><span class="s3">&gt;</span><span class="s1">2. Core Processing</span><span class="s3">&lt;/</span><span class="s6">h4</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">Novel Python-based Image Analysis Pipeline</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                 </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                 </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-3xl font-bold text-blue-500 transform rotate-90"</span><span class="s3">&gt;</span><span class="s4">➔</span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                 </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full max-w-md bg-indigo-100 text-indigo-800 rounded-lg p-4 text-center shadow"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span></span><span class="s3">&lt;</span><span class="s6">h4</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"font-bold"</span><span class="s3">&gt;</span><span class="s1">3. Quantification &amp; Analysis</span><span class="s3">&lt;/</span><span class="s6">h4</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">3D Actin Alignment &amp; Spheroid Morphology Metrics</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                 </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                 </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-3xl font-bold text-indigo-500 transform rotate-90"</span><span class="s3">&gt;</span><span class="s4">➔</span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                 </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full max-w-md bg-teal-100 text-teal-800 rounded-lg p-4 text-center shadow"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span></span><span class="s3">&lt;</span><span class="s6">h4</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"font-bold"</span><span class="s3">&gt;</span><span class="s1">4. Output &amp; Impact</span><span class="s3">&lt;/</span><span class="s6">h4</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                      </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">Biophysical Models &amp; Insights Published in *Advanced Functional Materials*</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                 </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">             </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">             </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-center text-sm text-gray-500 mt-8"</span><span class="s3">&gt;</span><span class="s1">This structured process demonstrates the ability to manage the full lifecycle of a data-intensive research project, from raw instrumentation output to high-impact scientific publication.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"publications"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white rounded-lg shadow-lg p-6 md:p-8 mb-20"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-3xl font-bold text-center mb-2 brand-text"</span><span class="s3">&gt;</span><span class="s4">Research Impact Analysis</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-center text-gray-600 max-w-2xl mx-auto mb-8"</span><span class="s3">&gt;</span><span class="s1">Analysis of contributions across key publications reveals a primary focus on the development of novel algorithms and computational pipelines.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"chart-container h-96 md:h-[450px]"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">canvas</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"publicationsBarChart"</span><span class="s3">&gt;&lt;/</span><span class="s6">canvas</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-center text-sm text-gray-500 mt-4"</span><span class="s3">&gt;</span><span class="s1">The horizontal bar chart categorizes contributions from six key publications, quantitatively showing that the majority of research impact stems directly from hands-on algorithm development and the design of robust analysis pipelines—core skills for an R&amp;D role.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">footer</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-center py-8 text-gray-500"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">This infographic was generated to visually represent the professional profile of Dr. Fereydoon Taheri.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-sm mt-2"</span><span class="s3">&gt;</span><span class="s1">&amp;copy; 2025</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">footer</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">main</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>document.addEventListener(</span><span class="s7">'DOMContentLoaded'</span><span class="s1">, () =&gt; {</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> tooltipTitleCallback = (tooltipItems) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">const</span><span class="s1"> item = tooltipItems[</span><span class="s12">0</span><span class="s1">];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">let</span><span class="s1"> label = item.chart.data.labels[item.dataIndex];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">if</span><span class="s1"> (</span><span class="s13">Array</span><span class="s1">.isArray(label)) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s11">return</span><span class="s1"> label.join(</span><span class="s7">' '</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">return</span><span class="s1"> label;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> wrapLabel = (label, maxWidth = </span><span class="s12">16</span><span class="s1">) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">if</span><span class="s1"> (label.length &lt;= maxWidth) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s11">return</span><span class="s1"> label;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">const</span><span class="s1"> words = label.split(</span><span class="s7">' '</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">let</span><span class="s1"> lines = [];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">let</span><span class="s1"> currentLine = </span><span class="s7">''</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">for</span><span class="s1"> (</span><span class="s11">const</span><span class="s1"> word </span><span class="s11">of</span><span class="s1"> words) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s11">if</span><span class="s1"> ((currentLine + </span><span class="s7">' '</span><span class="s1"> + word).trim().length &gt; maxWidth) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>lines.push(currentLine.trim());</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>currentLine = word;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>} </span><span class="s11">else</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>currentLine = (currentLine + </span><span class="s7">' '</span><span class="s1"> + word).trim();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">if</span><span class="s1"> (currentLine) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>lines.push(currentLine.trim());</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s11">return</span><span class="s1"> lines;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> radarChartData = {</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                </span>labels: [</span><span class="s1">'Algorithm Development'</span><span class="s4">, </span><span class="s1">'Mathematical Modeling'</span><span class="s4">, </span><span class="s1">'Computational Imaging'</span><span class="s4">, </span><span class="s1">'Project Leadership'</span><span class="s4">, </span><span class="s1">'Data Analysis &amp; Viz'</span><span class="s4">, </span><span class="s1">'Software Engineering'</span><span class="s4">],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>datasets: [{</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>label: </span><span class="s7">'Proficiency'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>data: [</span><span class="s12">9</span><span class="s1">, </span><span class="s12">9</span><span class="s1">, </span><span class="s12">8</span><span class="s1">, </span><span class="s12">8</span><span class="s1">, </span><span class="s12">7</span><span class="s1">, </span><span class="s12">8</span><span class="s1">],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>backgroundColor: </span><span class="s7">'rgba(0, 180, 216, 0.2)'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>borderColor: </span><span class="s7">'#00B4D8'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>pointBackgroundColor: </span><span class="s7">'#0077B6'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>pointBorderColor: </span><span class="s7">'#fff'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>pointHoverBackgroundColor: </span><span class="s7">'#fff'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>pointHoverBorderColor: </span><span class="s7">'#0077B6'</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}]</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> radarCtx = document.getElementById(</span><span class="s7">'competenciesRadarChart'</span><span class="s1">).getContext(</span><span class="s7">'2d'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">new</span><span class="s1"> </span><span class="s13">Chart</span><span class="s1">(radarCtx, {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>type: </span><span class="s7">'radar'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>data: radarChartData,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>options: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>responsive: </span><span class="s11">true</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>maintainAspectRatio: </span><span class="s11">false</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>elements: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>line: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>borderWidth: </span><span class="s12">3</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>scales: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>r: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>angleLines: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>color: </span><span class="s7">'#e2e8f0'</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>grid: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>color: </span><span class="s7">'#e2e8f0'</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>pointLabels: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>font: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>size: </span><span class="s12">13</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>weight: </span><span class="s7">'500'</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>color: </span><span class="s7">'#475569'</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>ticks: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>backdropColor: </span><span class="s7">'transparent'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>stepSize: </span><span class="s12">2</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>plugins: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>legend: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>display: </span><span class="s11">false</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>tooltip: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>callbacks: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>title: tooltipTitleCallback</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> publicationLabels = [</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">'Image Analysis Algorithm Dev'</span><span class="s4">,</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">'Computational Pipeline Design'</span><span class="s4">,</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">'Biophysical Modeling &amp; Interpretation'</span><span class="s4">,</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">'Data/Trajectory Analysis'</span><span class="s4">,</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">'Time-Series &amp; Regression Analysis'</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>];</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> barChartData = {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>labels: publicationLabels.map(l =&gt; wrapLabel(l)),</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>datasets: [{</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>label: </span><span class="s7">'Number of Publications'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>data: [</span><span class="s12">3</span><span class="s1">, </span><span class="s12">2</span><span class="s1">, </span><span class="s12">3</span><span class="s1">, </span><span class="s12">2</span><span class="s1">, </span><span class="s12">1</span><span class="s1">],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>backgroundColor: [</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s1">'#0077B6'</span><span class="s4">, </span><span class="s1">'#0096C7'</span><span class="s4">, </span><span class="s1">'#00B4D8'</span><span class="s4">, </span><span class="s1">'#48CAE4'</span><span class="s4">, </span><span class="s1">'#90E0EF'</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>borderColor: </span><span class="s7">'#fff'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>borderWidth: </span><span class="s12">1</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>borderRadius: </span><span class="s12">4</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}]</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> barCtx = document.getElementById(</span><span class="s7">'publicationsBarChart'</span><span class="s1">).getContext(</span><span class="s7">'2d'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">new</span><span class="s1"> </span><span class="s13">Chart</span><span class="s1">(barCtx, {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>type: </span><span class="s7">'bar'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>data: barChartData,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>options: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>indexAxis: </span><span class="s7">'y'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>responsive: </span><span class="s11">true</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>maintainAspectRatio: </span><span class="s11">false</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span>scales: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>x: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>beginAtZero: </span><span class="s11">true</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>grid: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>drawOnChartArea: </span><span class="s11">false</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>ticks: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>stepSize: </span><span class="s12">1</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>y: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                           </span>grid: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>display: </span><span class="s11">false</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>plugins: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>legend: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>display: </span><span class="s11">false</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>tooltip: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>callbacks: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span>title: tooltipTitleCallback</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p7"><span class="s10"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s10"></span><br></p>
+<body class="text-gray-800">
+
+    <header class="text-center py-12 px-4 bg-white">
+        <h1 class="text-4xl md:text-6xl font-black brand-text tracking-tight">Dr. Fereydoon Taheri</h1>
+        <p class="text-xl md:text-2xl font-light text-gray-600 mt-2">Computational Scientist | Imaging & Algorithm Development</p>
+        <p class="max-w-3xl mx-auto mt-6 text-gray-500">
+            An infographic resume showcasing a decade of experience in transforming complex data into scientific breakthroughs through advanced algorithms, mathematical modeling, and cross-functional R&D leadership.
+        </p>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <section id="overview" class="mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="stat-card">
+                    <span class="text-5xl font-extrabold brand-text">10+</span>
+                    <p class="text-gray-500 mt-2">Years of Experience</p>
+                </div>
+                <div class="stat-card">
+                    <span class="text-5xl font-extrabold brand-text">PhD</span>
+                    <p class="text-gray-500 mt-2">in Physics</p>
+                </div>
+                <div class="stat-card">
+                    <span class="text-5xl font-extrabold brand-text">6</span>
+                    <p class="text-gray-500 mt-2">Key Publications</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="competencies" class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-20">
+            <h2 class="text-3xl font-bold text-center mb-2 brand-text">Core Competencies</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8">A multi-faceted skill set balanced across theoretical modeling, software engineering, and strategic project leadership.</p>
+            <div class="chart-container">
+                <canvas id="competenciesRadarChart"></canvas>
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-4">This radar chart visualizes proficiency across key domains, demonstrating a well-rounded expertise crucial for bridging the gap between research and product development. Strengths in Algorithm Development and Modeling are complemented by strong project leadership and data analysis skills.</p>
+        </section>
+        
+        <section id="experience" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10 brand-text">Career Journey</h2>
+            <div class="relative max-w-4xl mx-auto">
+                <div class="absolute left-4 top-0 h-full w-0.5 brand-bg-light"></div>
+                <div class="relative pl-12 space-y-12">
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#00B4D8] timeline-item">
+                        <p class="font-semibold text-gray-500">Feb 2021 - Sep 2025</p>
+                        <h3 class="text-xl font-bold brand-text mt-1">Postdoctoral Researcher & Project Coordinator</h3>
+                        <p class="font-medium text-gray-600">IMSEAM, Heidelberg University</p>
+                        <p class="mt-3 text-gray-700">Led development of novel computational imaging algorithms for 3D biological structures and co-designed analysis methodologies with hardware experts, bridging the gap between experimental data and quantitative models.</p>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#00B4D8] timeline-item">
+                        <p class="font-semibold text-gray-500">Jul 2020 - Jan 2021</p>
+                        <h3 class="text-xl font-bold brand-text mt-1">Postdoctoral Researcher</h3>
+                        <p class="font-medium text-gray-600">ZMBH, Heidelberg University</p>
+                        <p class="mt-3 text-gray-700">Engineered a modular data platform for COVID-19 diagnostics, spearheading the algorithmic pipeline from data ingestion to final visualization using Python and SQL.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#00B4D8] timeline-item">
+                        <p class="font-semibold text-gray-500">Feb 2015 - Nov 2019</p>
+                        <h3 class="text-xl font-bold brand-text mt-1">Doctoral Researcher</h3>
+                        <p class="font-medium text-gray-600">German Cancer Research Center (dkfz)</p>
+                        <p class="mt-3 text-gray-700">Managed a multi-year R&D project solving inverse problems in chromatin mobility from terabytes of advanced light microscopy data (SPIM-FCS), developing robust processing pipelines in Python.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-20">
+             <h2 class="text-3xl font-bold text-center mb-2 brand-text">Project Deep Dive: Algorithm in Action</h2>
+             <p class="text-center text-gray-600 max-w-2xl mx-auto mb-10">From raw data to published insight, this flowchart illustrates the end-to-end process of a key computational imaging project.</p>
+             <div class="flex flex-col items-center space-y-4">
+                 <div class="w-full max-w-md bg-sky-100 text-sky-800 rounded-lg p-4 text-center shadow">
+                     <h4 class="font-bold">1. Data Input</h4>
+                     <p>Confocal Microscopy Data</p>
+                 </div>
+                 <div class="text-3xl font-bold text-sky-500 transform rotate-90">➔</div>
+                 <div class="w-full max-w-md bg-blue-100 text-blue-800 rounded-lg p-4 text-center shadow">
+                     <h4 class="font-bold">2. Core Processing</h4>
+                     <p>Novel Python-based Image Analysis Pipeline</p>
+                 </div>
+                 <div class="text-3xl font-bold text-blue-500 transform rotate-90">➔</div>
+                 <div class="w-full max-w-md bg-indigo-100 text-indigo-800 rounded-lg p-4 text-center shadow">
+                     <h4 class="font-bold">3. Quantification & Analysis</h4>
+                     <p>3D Actin Alignment & Spheroid Morphology Metrics</p>
+                 </div>
+                 <div class="text-3xl font-bold text-indigo-500 transform rotate-90">➔</div>
+                 <div class="w-full max-w-md bg-teal-100 text-teal-800 rounded-lg p-4 text-center shadow">
+                      <h4 class="font-bold">4. Output & Impact</h4>
+                      <p>Biophysical Models & Insights Published in *Advanced Functional Materials*</p>
+                 </div>
+             </div>
+             <p class="text-center text-sm text-gray-500 mt-8">This structured process demonstrates the ability to manage the full lifecycle of a data-intensive research project, from raw instrumentation output to high-impact scientific publication.</p>
+        </section>
+
+        <section id="publications" class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-20">
+            <h2 class="text-3xl font-bold text-center mb-2 brand-text">Research Impact Analysis</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8">Analysis of contributions across key publications reveals a primary focus on the development of novel algorithms and computational pipelines.</p>
+            <div class="chart-container h-96 md:h-[450px]">
+                <canvas id="publicationsBarChart"></canvas>
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-4">The horizontal bar chart categorizes contributions from six key publications, quantitatively showing that the majority of research impact stems directly from hands-on algorithm development and the design of robust analysis pipelines—core skills for an R&D role.</p>
+        </section>
+
+        <footer class="text-center py-8 text-gray-500">
+            <p>This infographic was generated to visually represent the professional profile of Dr. Fereydoon Taheri.</p>
+            <p class="text-sm mt-2">&copy; 2025</p>
+        </footer>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+
+            const wrapLabel = (label, maxWidth = 16) => {
+                if (label.length <= maxWidth) {
+                    return label;
+                }
+                const words = label.split(' ');
+                let lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                }
+                if (currentLine) {
+                    lines.push(currentLine.trim());
+                }
+                return lines;
+            };
+
+            const radarChartData = {
+                labels: ['Algorithm Development', 'Mathematical Modeling', 'Computational Imaging', 'Project Leadership', 'Data Analysis & Viz', 'Software Engineering'],
+                datasets: [{
+                    label: 'Proficiency',
+                    data: [9, 9, 8, 8, 7, 8],
+                    backgroundColor: 'rgba(0, 180, 216, 0.2)',
+                    borderColor: '#00B4D8',
+                    pointBackgroundColor: '#0077B6',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#0077B6'
+                }]
+            };
+
+            const radarCtx = document.getElementById('competenciesRadarChart').getContext('2d');
+            new Chart(radarCtx, {
+                type: 'radar',
+                data: radarChartData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    elements: {
+                        line: {
+                            borderWidth: 3
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: '#e2e8f0'
+                            },
+                            grid: {
+                                color: '#e2e8f0'
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 13,
+                                    weight: '500'
+                                },
+                                color: '#475569'
+                            },
+                            ticks: {
+                                backdropColor: 'transparent',
+                                stepSize: 2
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    }
+                }
+            });
+
+            const publicationLabels = [
+                'Image Analysis Algorithm Dev',
+                'Computational Pipeline Design',
+                'Biophysical Modeling & Interpretation',
+                'Data/Trajectory Analysis',
+                'Time-Series & Regression Analysis'
+            ];
+
+            const barChartData = {
+                labels: publicationLabels.map(l => wrapLabel(l)),
+                datasets: [{
+                    label: 'Number of Publications',
+                    data: [3, 2, 3, 2, 1],
+                    backgroundColor: [
+                        '#0077B6', '#0096C7', '#00B4D8', '#48CAE4', '#90E0EF'
+                    ],
+                    borderColor: '#fff',
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            };
+
+            const barCtx = document.getElementById('publicationsBarChart').getContext('2d');
+            new Chart(barCtx, {
+                type: 'bar',
+                data: barChartData,
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                     scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: {
+                                drawOnChartArea: false
+                            },
+                            ticks: {
+                                stepSize: 1
+                            }
+                        },
+                        y: {
+                           grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    }
+                }
+            });
+
+        });
+    </script>
 </body>
 </html>
+
